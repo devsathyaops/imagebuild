@@ -18,3 +18,24 @@ jobs:
       run: docker build . --file Dockerfile --tag devsathyaops/imagebuild:latest
     - name: push the docker image
       run: docker login -u devsathyaops -p ${{secrets.DOCKER_TOKEN}} && docker push devsathyaops/imagebuild:latest
+
+
+on:
+   push:
+      branches: ["master"]
+   pull_request:
+      branches: ["master"]
+       
+jobs:
+ 
+   build:
+     
+      runs-on: ubuntu-latest
+      
+      steps:
+      - uses: actions/checkout@v3
+      - name: Release the image to production
+        run: docker build . --file Dockerfile --tag devsathyaops/auto_build:latest
+      - name: push the docker image into production
+        run: dockerlogin -u devsathyaops -p ${{secrets.DOCKER_TOKEN}} && docker push devsathyaops/auto_build:latest
+
