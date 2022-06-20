@@ -17,4 +17,4 @@ jobs:
     - name: Build the Docker image
       run: docker build . --file Dockerfile --tag testpage:v1
     - name: push the docker image
-      run: docker login -u devsathyaops -p ${{secrets.DOCKER_TOKEN}} && docker push devsathyaops/imagebuild
+      run: docker login -u devsathyaops -p ${{secrets.DOCKER_TOKEN}} && docker push devsathyaops/imagebuild:latest
