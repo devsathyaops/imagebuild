@@ -1,3 +1,3 @@
-FROM ubuntu:20.04 LTS
+FROM ubuntu:20.04
 CMD echo "HELLO WORLD"
 EXPOSE 80
