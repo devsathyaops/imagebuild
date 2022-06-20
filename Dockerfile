@@ -1,2 +1,3 @@
 FROM ubuntu:20.04 LTS
 CMD echo "HELLO WORLD"
+EXPOSE 80
