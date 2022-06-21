@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-20.04
 
     steps:
-    - uses: action/checkou@v3
+    - uses: action/checkout@v3
     - name: Login 
       run: docker login -u devsathyaops -p ${{secrets.DOCKER_TOKEN}}
     - name: Push image to imagebuild repo
